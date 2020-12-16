@@ -1,0 +1,33 @@
+html, body { 
+	height: 100%;
+	margin: 0 10px 10px;
+}
+
+#titulo {
+	background-color: #888888;
+	text-align: center;
+	height: 5%;
+}
+
+#container {
+	display: grid;
+ 	grid-template-columns: 42.5% 42.5% 15%;
+	position: relative;
+	width: 100%;
+	height: 90%;
+}
+
+#btn1 {
+	text-align: center;
+	background-color: blue;
+}
+
+#btnPular {
+	text-align: center;             
+	background-color: white;	
+}
+
+#btn2 {
+	text-align: center;
+	background-color: red;
+}
