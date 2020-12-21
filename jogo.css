@@ -8,9 +8,11 @@ html, body {
 a{
 	color: gray;
 }
+
 .criado{
 	color: gray;
 }
+
 .criadores{
 	display: flex;
 	width: 100%;
@@ -32,44 +34,44 @@ a{
 	height: 50%;
 }
 
-#voltar{
+#btnVoltar{
 	display: flex;
   	justify-content: center;
   	border: 1px solid rgba(0, 0, 0, 0.6);
   	border-radius: 8px;
 
   	margin-right: 10px;
-  	margin-right: 10px;
+  	margin-left: 10px;
 
 	color: gray;
 	text-align: center; 
 	align-items: center;            
 	background-color: black;	
-
 }
 
 #btn1 {
-	display: flex;
   	justify-content: center;
   	border: 1px solid rgba(0, 0, 0, 0.6);
   	border-radius: 8px;
 
-  	margin-right: 10px;
-  	margin-right: 10px;
+  	margin-right: 20px;
+  	margin-left: 10px;
+
+  	padding: 10px;
 
 	text-align: center;
 	align-items: center; 
 	background-color: #87ceeb;
 }
 
-#btnPular {
+#btnAvancar {
 	display: flex;
   	justify-content: center;
   	border: 1px solid rgba(0, 0, 0, 0.6);
 	border-radius: 8px;
 
 	margin-right: 10px;
-  	margin-right: 10px;
+  	margin-left: 10px;
 
 	color: gray;
 	text-align: center;  
@@ -78,13 +80,14 @@ a{
 }
 
 #btn2 {
-	display: flex;
   	justify-content: center;
   	border: 1px solid rgba(0, 0, 0, 0.6);
   	border-radius: 8px;
 
   	margin-right: 10px;
-  	margin-right: 10px;
+  	margin-left: 20px;
+
+  	padding: 10px;
 
 	text-align: center;
 	align-items: center; 
@@ -98,6 +101,14 @@ a{
   	text-align: center;
   	align-items: center;
   	position: relative;
-  	margin-right: 10px;
-  	margin-right: 10px;
+}
+
+
+.resultado {
+	justify-content: center;
+	display: none;
+}
+
+#percentualBtn1, #percentualBtn2 {
+	font-size: 65px;
 }

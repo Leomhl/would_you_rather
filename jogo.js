@@ -1,5 +1,5 @@
 var opcao = 0;
-
+document.querySelector('#btnVoltar').children[0].innerHTML = '';
 
 var opcoes = [
 	{
@@ -74,8 +74,11 @@ var opcoes = [
 		opcao1: "Mostrar para seus amigos e família todo seu histórico na internet",
 		opcao2: "Morrer",
 	},
-
 ];
+
+var percentualBtn1 = 0;
+var percentualBtn2 = 0;
+var clicou = false;
 
 function gerarPergunta() {
 	// Primeiro filho da div btn1 
@@ -83,39 +86,73 @@ function gerarPergunta() {
 	var opcao1 = opcoes[opcao].opcao1;
 	var opcao2 = opcoes[opcao].opcao2;
 
-	document.querySelector('#btn1').children[0].innerHTML = opcao1;
-	document.querySelector('#btn2').children[0].innerHTML = opcao2;
+	document.querySelector('#opcao1').innerHTML = opcao1;
+	document.querySelector('#opcao2').innerHTML = opcao2;
 }
 
-document.querySelector('#voltar').addEventListener('click', function(){
-	opcao -= 1;
-	gerarPergunta();
+document.querySelector('#btnVoltar').addEventListener('click', function(){
+
+	clicou = false;
+
+	if(opcao > 0) {
+		opcao -= 1;
+
+		// Ocultar
+		document.getElementsByClassName("resultado")[0].style.display = 'none';
+		document.getElementsByClassName("resultado")[1].style.display = 'none';
+
+		if(opcao == 0)
+			document.querySelector('#btnVoltar').children[0].innerHTML = '';
+
+		if(opcoes.length - 1 != opcao) 
+			document.querySelector('#btnAvancar').children[0].innerHTML = 'Avançar';
+
+
+		gerarPergunta();
+	} 
 });
 
-document.querySelector('#btn1').addEventListener('click', function(){
-	opcao += 1;
-	gerarPergunta();
-});
+function exibirPercentuais() {
+	percentualBtn1 = Math.floor(Math.random() * 101);
+	percentualBtn2 = 100 - percentualBtn1;
 
-document.querySelector('#btn2').addEventListener('click', function(){
-	opcao += 1;
-	gerarPergunta();
-});
+	if(!clicou) { // se clicou for falso (true negado)
 
-document.querySelector('#btnPular').addEventListener('click', function(){
+		// Carregamos os valores no html
+		document.querySelector("#percentualBtn1").innerHTML = percentualBtn1+'%';
+		document.querySelector("#percentualBtn2").innerHTML = percentualBtn2+'%';
+
+		// Exibir
+		document.getElementsByClassName("resultado")[0].style.display = 'initial';
+		document.getElementsByClassName("resultado")[1].style.display = 'initial';
+
+		// Se for true, vira false.
+		// Se for false, vira true.
+		clicou = !clicou;
+	}
+
+}
+
+document.querySelector('#btn1').addEventListener('click', exibirPercentuais);
+document.querySelector('#btn2').addEventListener('click', exibirPercentuais);
+
+document.querySelector('#btnAvancar').addEventListener('click', function(){
+	
 	opcao += 1;
+	clicou = false;
+
+	// Ocultar
+	document.getElementsByClassName("resultado")[0].style.display = 'none';
+	document.getElementsByClassName("resultado")[1].style.display = 'none';
+
+	if(opcao > 0)
+		document.querySelector('#btnVoltar').children[0].innerHTML = 'Voltar';
+
+	if(opcoes.length - 1 == opcao) 
+		document.querySelector('#btnAvancar').children[0].innerHTML = '';
+
 	gerarPergunta();
 });
 
 // Inicia o jogo
 gerarPergunta();
-
-
-// Para a próxima aula: deixar menos feio
-// colocar um gerador de % aleatórias
-// Sorteador de pergunta (em vez de uma ordem sequencial)
-// Colocar borda arredondada
-// dar espaço entre os botões (grid)
-
-
-// Dever de casa: criar mais perguntas
