@@ -1,33 +1,103 @@
 html, body { 
 	height: 100%;
 	margin: 0 10px 10px;
+	color: white;
+	background-color: black; 
+}
+
+a{
+	color: gray;
+}
+.criado{
+	color: gray;
+}
+.criadores{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #titulo {
-	background-color: #888888;
+	background-color: black;
 	text-align: center;
-	height: 5%;
+	height: 10%;
 }
 
 #container {
 	display: grid;
- 	grid-template-columns: 42.5% 42.5% 15%;
+ 	grid-template-columns: 10% 40% 0% 40% 10%;
 	position: relative;
 	width: 100%;
-	height: 90%;
+	height: 50%;
+}
+
+#voltar{
+	display: flex;
+  	justify-content: center;
+  	border: 1px solid rgba(0, 0, 0, 0.6);
+  	border-radius: 8px;
+
+  	margin-right: 10px;
+  	margin-right: 10px;
+
+	color: gray;
+	text-align: center; 
+	align-items: center;            
+	background-color: black;	
+
 }
 
 #btn1 {
+	display: flex;
+  	justify-content: center;
+  	border: 1px solid rgba(0, 0, 0, 0.6);
+  	border-radius: 8px;
+
+  	margin-right: 10px;
+  	margin-right: 10px;
+
 	text-align: center;
-	background-color: blue;
+	align-items: center; 
+	background-color: #87ceeb;
 }
 
 #btnPular {
-	text-align: center;             
-	background-color: white;	
+	display: flex;
+  	justify-content: center;
+  	border: 1px solid rgba(0, 0, 0, 0.6);
+	border-radius: 8px;
+
+	margin-right: 10px;
+  	margin-right: 10px;
+
+	color: gray;
+	text-align: center;  
+	align-items: center;            
+	background-color: black;	
 }
 
 #btn2 {
+	display: flex;
+  	justify-content: center;
+  	border: 1px solid rgba(0, 0, 0, 0.6);
+  	border-radius: 8px;
+
+  	margin-right: 10px;
+  	margin-right: 10px;
+
 	text-align: center;
+	align-items: center; 
 	background-color: red;
+}
+
+#ou{
+	color: white;
+	display: flex;
+  	justify-content: center;
+  	text-align: center;
+  	align-items: center;
+  	position: relative;
+  	margin-right: 10px;
+  	margin-right: 10px;
 }
